@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/levels/level_01/Level_01.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=2]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 560 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 560 )
+
 [node name="Level_01" type="YSort"]
 script = ExtResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Left" type="StaticBody2D" parent="Walls"]
+position = Vector2( -10, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
+shape = SubResource( 1 )
+
+[node name="Right" type="StaticBody2D" parent="Walls"]
+position = Vector2( 1930, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
+shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 960, 960 )
