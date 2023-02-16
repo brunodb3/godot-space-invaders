@@ -7,9 +7,9 @@ func shoot():
 
 func _physics_process(delta):
 	var collision = move_and_collide(direction * delta)
-	
-	if collision:
-		collision.collider.queue_free()
+
+	if collision && collision.collider.has_method('die'):
+		collision.collider.die()
 		queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
