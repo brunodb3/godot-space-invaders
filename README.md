@@ -1,4 +1,4 @@
-# [WIP] [GDLearn #3] Space Invaders Clone
+# [GDLearn #3] Space Invaders Clone
 
 This is the third entry on my personal challenge, the **GDLearn**. My goal is to upload at least one game to itch.io every month, on an attempt to learn about video game development using the Godot Engine.
 
@@ -8,7 +8,11 @@ Be aware this is a prototype made for learning purposes only.
 
 ## Controls
 
-- Work in progress, controls not yet defined
+- Use "SpaceBar" to shoot bullets at the aliens;
+
+- Use "A" and "D" or "Left Arrow" and "Right Arrow" to control the spaceship;
+
+- Use "Esc" to go back to the menu;
 
 Enjoy!
 
