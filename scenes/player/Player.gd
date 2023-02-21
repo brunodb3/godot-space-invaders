@@ -3,7 +3,8 @@ extends KinematicBody2D
 var bullet_cooldown = 0
 var direction = Vector2.ZERO
 
-onready var Bullet = load("res://scenes/player/Bullet.tscn")
+onready var health = 3
+onready var Bullet = load("res://scenes/bullet/Bullet.tscn")
 
 func _physics_process(delta):
 	check_input()
@@ -37,8 +38,23 @@ func move(delta):
 
 func shoot():
 	var bullet = Bullet.instance()
+	
+	bullet.set_collision_layer(2)
+	bullet.set_collision_mask(8)
+	bullet.get_node("Sprite").modulate = Color("00b7ef")
 
 	bullet.position = position
-	bullet.shoot()
+	bullet.shoot("up")
 
 	get_parent().add_child(bullet)
+
+func take_damage(amount: int):
+	health -= amount
+
+	get_parent().livesLabel.text = str("Lives: ", health)
+
+	if health <= 0:
+		die()
+
+func die():
+	get_tree().change_scene("res://scenes/game_over/GameOver.tscn")

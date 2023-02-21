@@ -87,6 +87,7 @@ ui_pause={
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="PLAYER_HURTBOX"
 2d_physics/layer_4="ENEMY_HURTBOX"
+2d_physics/layer_5="ENEMY"
 
 [physics]
 

@@ -9,4 +9,4 @@ func _on_StartGameButton_pressed():
 
 func _on_SourceCodeButton_pressed():
 	# warning-ignore:return_value_discarded
-	OS.shell_open("https://github.com/brunodb3")
+	OS.shell_open("https://github.com/brunodb3/godot-space-invaders")

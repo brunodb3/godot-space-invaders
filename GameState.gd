@@ -5,3 +5,7 @@ var PLAYER_SPEED = 1250
 var BULLET_SPEED = 1000
 var BULLET_COOLDOWN = 25
 var ALIEN_SCORE = 50
+var SCORE = 0
+
+func _ready():
+	randomize()
